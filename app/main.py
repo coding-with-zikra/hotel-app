@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
-from app.api.v1 import auth, rooms, bookings, payments
+from app.api.v1 import auth, rooms, bookings, payments, menu, food_orders
 
 app = FastAPI(title=settings.PROJECT_NAME)
 
@@ -19,6 +19,8 @@ app.include_router(auth.router, prefix=settings.API_V1_PREFIX)
 app.include_router(rooms.router, prefix=settings.API_V1_PREFIX)
 app.include_router(bookings.router, prefix=settings.API_V1_PREFIX)
 app.include_router(payments.router, prefix=settings.API_V1_PREFIX)
+app.include_router(menu.router, prefix=settings.API_V1_PREFIX)
+app.include_router(food_orders.router, prefix=settings.API_V1_PREFIX)
 
 
 @app.get("/health")
