@@ -7,6 +7,7 @@ function Navbar() {
         Hotel
       </Link>
       <div className="flex gap-6">
+        <Link to="/rooms" className="hover:text-slate-300">Rooms</Link>
         <Link to="/menu" className="hover:text-slate-300">Menu</Link>
         <Link to="/dashboard" className="hover:text-slate-300">Dashboard</Link>
         <Link to="/login" className="hover:text-slate-300">Login</Link>
